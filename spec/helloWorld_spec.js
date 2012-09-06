@@ -14,6 +14,11 @@ describe("Bowling Game TDD Kata", function() {
 		}	
 	}
 
+	function rollSpare() {
+		g.roll(5);
+		g.roll(5);
+	}
+
 	beforeEach(function() {
 		g = new Game;
 	});
@@ -30,13 +35,11 @@ describe("Bowling Game TDD Kata", function() {
 		expect(g.score()).toEqual(20);
 	});
 
-	// it('test one-spare Game', function() {
-	//	g.roll(5);
-	//	g.roll(5);	//spare
-	//	g.roll(3);
+	it('test one-spare Game', function() {
+		rollSpare();
+		g.roll(3);
+		rollMany(17, 0);
 
-	//	rollMany(17, 0);
-
-	//	expect(g.score()).toEqual(16)
-	// })
+		expect(g.score()).toEqual(16)
+	});
 });
