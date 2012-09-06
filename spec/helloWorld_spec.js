@@ -23,19 +23,19 @@ describe("Bowling Game TDD Kata", function() {
 		g = new Game;
 	});
 
-	it('test Gutter Game', function() {
+	it('test #1 Gutter Game', function() {
 		rollMany(20, 0);
 
 		expect(g.score()).toEqual(0);
 	});
 
-	it('test all-ones Game', function() {
+	it('test #2 all-ones Game', function() {
 		rollMany(20, 1);
 
 		expect(g.score()).toEqual(20);
 	});
 
-	it('test one-spare Game', function() {
+	it('test #3 one-spare Game', function() {
 		rollSpare();
 		g.roll(3);
 		rollMany(17, 0);
